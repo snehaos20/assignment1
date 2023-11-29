@@ -18,7 +18,7 @@ pipeline {
             steps {
 	    	sh "docker container rm 23Q1 -f"
             	sh "docker run --name 23Q1server -p 80:80 -d httpd"
-            	sh "docker cp /mnt/cloneProject/assigment1/index.html 23Q1server:/usr/local/apache2/htdocs"
+            	sh "docker cp /mnt/cloneProject/assignment1/index.html 23Q1server:/usr/local/apache2/htdocs"
             }
 	}	
     }
