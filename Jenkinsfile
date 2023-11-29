@@ -16,7 +16,7 @@ pipeline {
         }
         stage("creating 23Q2 container"){
             steps {
-                sh "docker container rm 23Q2server"
+                sh "docker container rm 23Q2server -f"
                 sh "docker run --name 23Q2server -p 80:80 -d httpd"
                 sh "docker cp /mnt/cloneProject/assignment2/index.html 23Q2server:/usr/local/apache2/htdocs"
             }
