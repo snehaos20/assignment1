@@ -16,7 +16,7 @@ pipeline {
         }
         stage("creating 23Q2 container"){
             steps {
-                sh "if [ (lsof -i:80 -t) -ne 0 ]; then"
+                sh "if [ \$(lsof -i:80 -t) -ne 0 ]; then"
                     echo "in if"
                     sh "kill -9 \$(lsof -i:80 -t)"
                 sh "else then"
