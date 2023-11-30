@@ -17,7 +17,7 @@ pipeline {
         stage("craeting container"){
             steps {
 	    	sh "docker container rm 23Q1server -f"
-		sh "kill -9 $$(lsof -i:80 -t)"
+		sh "kill -9 ${lsof -i:80 -t}"
             	sh "docker run --name 23Q1server -p 80:80 -d httpd"
             	sh "docker cp /mnt/cloneProject/assignment1/index.html 23Q1server:/usr/local/apache2/htdocs"
             }
